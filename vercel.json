@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd frontend && npm install && npx craco build",
+  "buildCommand": "cd frontend && npx craco build",
   "outputDirectory": "frontend/build",
-  "installCommand": "cd frontend && npm install",
+  "installCommand": "cd frontend && npm install --legacy-peer-deps",
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
