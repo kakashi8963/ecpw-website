@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Activity } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -40,10 +40,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="flex items-center gap-2 group" data-testid="nav-logo">
-            <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/30 transition-colors">
-              <Activity className="w-4 h-4 text-cyan-400" />
-            </div>
+          <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="flex items-center gap-2.5 group" data-testid="nav-logo">
+            <img src="/logo.png" alt="ECPW Logo" className="h-9 w-9 rounded-lg object-contain" />
             <span className="font-heading font-bold text-sm lg:text-base text-white tracking-tight">
               Eastern Chemical<span className="text-cyan-400">.</span>
             </span>

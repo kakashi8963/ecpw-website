@@ -1,5 +1,4 @@
 import React from 'react';
-import { Activity } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,10 +9,8 @@ const Footer = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center">
-              <Activity className="w-4 h-4 text-cyan-400" />
-            </div>
+          <div className="flex items-center gap-2.5">
+            <img src="/logo.png" alt="ECPW Logo" className="h-9 w-9 rounded-lg object-contain" />
             <div>
               <span className="font-heading font-bold text-sm text-white tracking-tight">
                 Eastern Chemical<span className="text-cyan-400">.</span>

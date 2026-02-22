@@ -54,7 +54,7 @@ const AboutSection = () => {
           >
             <p className="text-slate-400 text-base lg:text-lg leading-relaxed mb-8" data-testid="about-description">
               <span className="text-white font-semibold">Eastern Chemical & Pharmaceutical Works</span> is 
-              dedicated to revolutionizing cardiac diagnostics through cutting-edge technology. As the exclusive 
+              dedicated to revolutionizing cardiac diagnostics through cutting-edge technology. As one of the 
               distributor of PhysioSign's groundbreaking saahECG technology, we bridge the gap between 
               traditional non-invasive ECG limitations and the precision of invasive electrophysiology &mdash; 
               making world-class cardiac assessment accessible to every healthcare facility.

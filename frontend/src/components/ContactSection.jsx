@@ -59,7 +59,7 @@ const ContactSection = () => {
             <div className="glass rounded-xl p-6 space-y-6">
               <h3 className="text-white font-semibold text-lg font-heading">Eastern Chemical & Pharmaceutical Works</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Exclusive distributor of PhysioSign's revolutionary saahECG technology. 
+                Distributor of PhysioSign's revolutionary saahECG technology. 
                 Reach out to learn how we can bring advanced cardiac diagnostics to your institution.
               </p>
 
