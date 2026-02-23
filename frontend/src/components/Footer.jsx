@@ -13,9 +13,8 @@ const Footer = () => {
             <img src="/logo.png" alt="ECPW Logo" className="h-9 w-9 rounded-lg object-contain" />
             <div>
               <span className="font-heading font-bold text-sm text-white tracking-tight">
-                Eastern Chemical<span className="text-cyan-400">.</span>
+                ECPW<span className="text-cyan-400">.</span>
               </span>
-              <div className="text-[10px] text-slate-600">& Pharmaceutical Works</div>
             </div>
           </div>
 
@@ -29,7 +28,7 @@ const Footer = () => {
           {/* Right */}
           <div className="text-right">
             <p className="text-slate-600 text-xs" data-testid="footer-copyright">
-              &copy; {currentYear} Eastern Chemical & Pharmaceutical Works. All rights reserved.
+              &copy; {currentYear} ECPW. All rights reserved.
             </p>
             <p className="text-slate-700 text-[10px] mt-1">
               saahECG & vistaECG are technologies developed by PhysioSign.

@@ -38,8 +38,8 @@ const AboutSection = () => {
             <div className="relative rounded-2xl overflow-hidden">
               <div className="absolute -inset-1 bg-gradient-to-br from-cyan-500/20 via-transparent to-violet-500/10 rounded-2xl blur-lg" />
               <img
-                src="https://images.pexels.com/photos/8532847/pexels-photo-8532847.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                alt="Research and Development Lab"
+                src="/about-us.jpg"
+                alt="ECPW About Us"
                 className="relative rounded-2xl w-full h-[400px] object-cover border border-white/5"
                 data-testid="about-image"
               />
@@ -53,9 +53,8 @@ const AboutSection = () => {
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             <p className="text-slate-400 text-base lg:text-lg leading-relaxed mb-8" data-testid="about-description">
-              <span className="text-white font-semibold">Eastern Chemical & Pharmaceutical Works</span> is 
-              dedicated to revolutionizing cardiac diagnostics through cutting-edge technology. As one of the 
-              distributor of PhysioSign's groundbreaking saahECG technology, we bridge the gap between 
+              <span className="text-white font-semibold">ECPW</span> is dedicated to revolutionizing cardiac
+              diagnostics through cutting-edge technology. We bridge the gap between
               traditional non-invasive ECG limitations and the precision of invasive electrophysiology &mdash; 
               making world-class cardiac assessment accessible to every healthcare facility.
             </p>

@@ -57,9 +57,8 @@ const ContactSection = () => {
             className="lg:col-span-2 space-y-6"
           >
             <div className="glass rounded-xl p-6 space-y-6">
-              <h3 className="text-white font-semibold text-lg font-heading">Eastern Chemical & Pharmaceutical Works</h3>
+              <h3 className="text-white font-semibold text-lg font-heading">ECPW</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Distributor of PhysioSign's revolutionary saahECG technology. 
                 Reach out to learn how we can bring advanced cardiac diagnostics to your institution.
               </p>
 
@@ -70,7 +69,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <div className="text-white text-sm font-medium">Location</div>
-                    <div className="text-slate-500 text-xs mt-0.5">India</div>
+                    <div className="text-slate-500 text-xs mt-0.5">Delhi, India</div>
                   </div>
                 </div>
 
@@ -80,7 +79,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <div className="text-white text-sm font-medium">Email</div>
-                    <div className="text-slate-500 text-xs mt-0.5">info@easternchemical.com</div>
+                    <div className="text-slate-500 text-xs mt-0.5">info@ecpw.in</div>
                   </div>
                 </div>
 
@@ -90,7 +89,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <div className="text-white text-sm font-medium">Phone</div>
-                    <div className="text-slate-500 text-xs mt-0.5">Contact us for details</div>
+                    <div className="text-slate-500 text-xs mt-0.5">+91 9828013726</div>
                   </div>
                 </div>
               </div>

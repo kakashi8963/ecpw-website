@@ -37,7 +37,7 @@ const HeroSection = () => {
             >
               <div className="h-[1px] w-8 bg-cyan-500" />
               <span className="text-cyan-400 text-xs font-mono uppercase tracking-[0.2em]">
-                Eastern Chemical & Pharmaceutical Works
+                ECPW
               </span>
             </motion.div>
 

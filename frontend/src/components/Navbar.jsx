@@ -43,7 +43,7 @@ const Navbar = () => {
           <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="flex items-center gap-2.5 group" data-testid="nav-logo">
             <img src="/logo.png" alt="ECPW Logo" className="h-9 w-9 rounded-lg object-contain" />
             <span className="font-heading font-bold text-sm lg:text-base text-white tracking-tight">
-              Eastern Chemical<span className="text-cyan-400">.</span>
+              ECPW<span className="text-cyan-400">.</span>
             </span>
           </a>
 
