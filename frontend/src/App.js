@@ -9,6 +9,7 @@ import SolutionSection from "@/components/SolutionSection";
 import HowItWorks from "@/components/HowItWorks";
 import FeaturesGrid from "@/components/FeaturesGrid";
 import ComparisonTable from "@/components/ComparisonTable";
+import PublicationsSection from "@/components/PublicationsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -27,6 +28,8 @@ function App() {
         <div className="section-divider" />
         <FeaturesGrid />
         <ComparisonTable />
+        <div className="section-divider" />
+        <PublicationsSection />
         <div className="section-divider" />
         <ContactSection />
       </main>

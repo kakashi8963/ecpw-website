@@ -13,7 +13,7 @@ const Footer = () => {
             <img src="/logo.png" alt="ECPW Logo" className="h-9 w-9 rounded-lg object-contain" />
             <div>
               <span className="font-heading font-bold text-sm text-white tracking-tight">
-                ECPW<span className="text-cyan-400">.</span>
+                ECPW
               </span>
             </div>
           </div>
