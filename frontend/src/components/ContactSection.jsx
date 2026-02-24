@@ -7,21 +7,27 @@ const ContactSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [form, setForm] = useState({ name: '', email: '', phone: '', organization: '', message: '' });
   const [status, setStatus] = useState('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
+    setErrorMessage('');
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error('Request failed');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.details || data.error || 'Request failed');
+      }
       setStatus('sent');
       setForm({ name: '', email: '', phone: '', organization: '', message: '' });
       setTimeout(() => setStatus('idle'), 4000);
-    } catch {
+    } catch (err) {
+      setErrorMessage(err.message || 'Unable to send message right now.');
       setStatus('error');
       setTimeout(() => setStatus('idle'), 4000);
     }
@@ -195,6 +201,11 @@ const ContactSection = () => {
                   </>
                 )}
               </button>
+              {status === 'error' && errorMessage ? (
+                <p className="text-rose-400 text-xs mt-3 max-w-xl" data-testid="contact-submit-error">
+                  {errorMessage}
+                </p>
+              ) : null}
             </form>
           </motion.div>
         </div>
