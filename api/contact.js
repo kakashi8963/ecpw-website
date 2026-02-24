@@ -4,13 +4,17 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, phone, organization, message } = req.body;
+    const payload = typeof req.body === "string" ? JSON.parse(req.body) : req.body || {};
+    const { name, email, phone, organization, message } = payload;
 
     if (!name || !email || !message) {
       return res.status(400).json({ error: "Name, email, and message are required" });
     }
 
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
+    const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "info@ecpw.in";
+    const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "ECPW Website <onboarding@resend.dev>";
+
     if (!RESEND_API_KEY) {
       console.error("RESEND_API_KEY is not configured");
       return res.status(500).json({ error: "Email service not configured" });
@@ -39,8 +43,8 @@ export default async function handler(req, res) {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "ECPW Website <onboarding@resend.dev>",
-        to: ["admin@ecpw.in"],
+        from: RESEND_FROM_EMAIL,
+        to: [CONTACT_TO_EMAIL],
         reply_to: email,
         subject: `New enquiry from ${name}`,
         html: htmlBody,
@@ -48,9 +52,19 @@ export default async function handler(req, res) {
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
+      const rawError = await response.text();
+      let errorData = rawError;
+      try {
+        errorData = JSON.parse(rawError);
+      } catch {
+        // Keep non-JSON raw error body as-is for logs.
+      }
       console.error("Resend API error:", errorData);
-      return res.status(502).json({ error: "Failed to send email" });
+      return res.status(502).json({
+        error: "Failed to send email",
+        details:
+          "Check RESEND_API_KEY and ensure RESEND_FROM_EMAIL is a verified sender/domain in Resend.",
+      });
     }
 
     return res.status(200).json({
