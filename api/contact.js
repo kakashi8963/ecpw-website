@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
     const CONTACT_TO_EMAIL = "olaamigo2243@gmail.com";
     const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "ECPW Website <onboarding@resend.dev>";
-    const RESEND_TEST_TO_EMAIL = process.env.RESEND_TEST_TO_EMAIL;
+    const RESEND_TEST_TO_EMAIL = "olaamigo2243@gmail.com";
 
     if (!RESEND_API_KEY) {
       console.error("RESEND_API_KEY is not configured");
