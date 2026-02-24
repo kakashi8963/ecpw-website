@@ -5,7 +5,7 @@ import { FileText, ExternalLink } from 'lucide-react';
 const PublicationsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const publicationPath = '/international-journal-of-cardiology-2016.pdf';
+  const publicationPath = '/International%20Journal%20of%20Cardiology%202016.pdf';
 
   return (
     <section id="publications" data-testid="publications-section" className="relative py-24 lg:py-32" ref={ref}>

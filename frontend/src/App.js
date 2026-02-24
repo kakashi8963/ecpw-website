@@ -14,6 +14,24 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 function App() {
+  const normalizedPath =
+    typeof window !== "undefined"
+      ? window.location.pathname.replace(/\/+$/, "") || "/"
+      : "/";
+  const isPublicationsPage = normalizedPath === "/publications";
+
+  if (isPublicationsPage) {
+    return (
+      <div className="min-h-screen bg-[#050505] text-white" data-testid="app-root">
+        <Navbar />
+        <main>
+          <PublicationsSection />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#050505] text-white" data-testid="app-root">
       <Navbar />
@@ -28,8 +46,6 @@ function App() {
         <div className="section-divider" />
         <FeaturesGrid />
         <ComparisonTable />
-        <div className="section-divider" />
-        <PublicationsSection />
         <div className="section-divider" />
         <ContactSection />
       </main>

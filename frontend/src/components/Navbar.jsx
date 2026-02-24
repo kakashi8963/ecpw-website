@@ -7,13 +7,15 @@ const navLinks = [
   { label: 'Technology', href: '#technology' },
   { label: 'Features', href: '#features' },
   { label: 'Comparison', href: '#comparison' },
-  { label: 'Publications', href: '#publications' },
+  { label: 'Publications', href: '/publications' },
   { label: 'Contact', href: '#contact' },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const normalizedPath = window.location.pathname.replace(/\/+$/, '') || '/';
+  const isHomePage = normalizedPath === '/';
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -22,10 +24,16 @@ const Navbar = () => {
   }, []);
 
   const handleNavClick = (e, href) => {
-    e.preventDefault();
     setMenuOpen(false);
+    if (!href.startsWith('#') || !isHomePage) return;
+    e.preventDefault();
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const resolveHref = (href) => {
+    if (!href.startsWith('#')) return href;
+    return isHomePage ? href : `/${href}`;
   };
 
   return (
@@ -41,7 +49,18 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="flex items-center gap-2.5 group" data-testid="nav-logo">
+          <a
+            href={isHomePage ? '#hero' : '/'}
+            onClick={(e) => {
+              if (isHomePage) {
+                handleNavClick(e, '#hero');
+              } else {
+                setMenuOpen(false);
+              }
+            }}
+            className="flex items-center gap-2.5 group"
+            data-testid="nav-logo"
+          >
             <img src="/logo.png" alt="ECPW Logo" className="h-9 w-9 rounded-lg object-contain" />
             <span className="font-heading font-bold text-sm lg:text-base text-white tracking-tight">
               ECPW
@@ -53,7 +72,7 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={resolveHref(link.href)}
                 onClick={(e) => handleNavClick(e, link.href)}
                 data-testid={`nav-link-${link.label.toLowerCase()}`}
                 className="text-sm text-slate-400 hover:text-cyan-400 transition-colors duration-300 font-medium tracking-wide"
@@ -62,7 +81,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="#contact"
+              href={resolveHref('#contact')}
               onClick={(e) => handleNavClick(e, '#contact')}
               data-testid="nav-cta-demo"
               className="text-sm font-semibold px-5 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 hover:bg-cyan-500/20 hover:border-cyan-400/50 transition-all duration-300"
@@ -96,7 +115,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={resolveHref(link.href)}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className="block text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium"
                 >
@@ -104,7 +123,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="#contact"
+                href={resolveHref('#contact')}
                 onClick={(e) => handleNavClick(e, '#contact')}
                 className="block text-center text-sm font-semibold px-5 py-2.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30"
               >
