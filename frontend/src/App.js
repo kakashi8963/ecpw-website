@@ -12,6 +12,7 @@ import ComparisonTable from "@/components/ComparisonTable";
 import PublicationsSection from "@/components/PublicationsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const normalizedPath =
@@ -28,6 +29,7 @@ function App() {
           <PublicationsSection />
         </main>
         <Footer />
+        <Analytics />
       </div>
     );
   }
@@ -50,6 +52,7 @@ function App() {
         <ContactSection />
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }
