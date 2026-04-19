@@ -25,7 +25,7 @@ const SolutionSection = () => {
             Introducing <span className="text-cyan-400">saahECG</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto mt-4 text-base lg:text-lg">
-            A once-in-a-century breakthrough &mdash; the world's first non-invasive ECG to achieve 
+            A once-in-a-century breakthrough in the <span className="text-white font-medium">latest ECG technology</span> &mdash; the world's most advanced <span className="text-white font-medium">latest ECG machine</span> to achieve 
             ion-level signal capture with AI-automated diagnosis.
           </p>
         </motion.div>

@@ -90,7 +90,7 @@ const FeaturesGrid = () => {
             Why <span className="text-cyan-400">saahECG</span> Changes Everything
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto mt-4 text-base lg:text-lg">
-            A comprehensive suite of breakthrough capabilities that redefine cardiac diagnostics.
+            Experience the latest ECG technology. A comprehensive suite of breakthrough capabilities built into our latest ECG machine to redefine cardiac diagnostics.
           </p>
         </motion.div>
 
