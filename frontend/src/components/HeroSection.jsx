@@ -38,7 +38,7 @@ const HeroSection = () => {
             >
               Advancing
               <br />
-              Healthcare Through
+              Cardiology Through
               <br />
               <span className="text-cyan-400 glow-text">Science & Precision</span>
             </motion.h1>
@@ -50,7 +50,7 @@ const HeroSection = () => {
               className="mt-6 text-slate-400 text-base lg:text-lg leading-relaxed max-w-lg"
               data-testid="hero-subtext"
             >
-              Pioneering the next generation of cardiac diagnostics with 
+              Empowering cardiologists with the next generation of cardiac diagnostics. 
               <span className="text-white font-medium"> saahECG </span>
               technology &mdash; the world's first AI-powered ECG capturing signals at the 
               <span className="font-mono text-cyan-400"> 10<sup>22</sup> </span> ion level.

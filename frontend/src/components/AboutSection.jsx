@@ -56,7 +56,7 @@ const AboutSection = () => {
               <span className="text-white font-semibold">ECPW</span> is dedicated to revolutionizing cardiac
               diagnostics through cutting-edge technology. We bridge the gap between
               traditional non-invasive ECG limitations and the precision of invasive electrophysiology &mdash; 
-              making world-class cardiac assessment accessible to every healthcare facility.
+              empowering cardiologists and bringing world-class cardiac assessment to every healthcare facility.
             </p>
 
             <p className="text-slate-400 text-base leading-relaxed mb-10">
