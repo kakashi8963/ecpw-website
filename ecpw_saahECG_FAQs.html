@@ -1,0 +1,365 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+.faq-wrap { padding: 1.5rem 0; }
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin: 2rem 0 0.75rem;
+}
+.section-label:first-of-type { margin-top: 0; }
+.faq-item {
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--border-radius-lg);
+  background: var(--color-background-primary);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-q {
+  width: 100%;
+  text-align: left;
+  padding: 14px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+.faq-q:hover { background: var(--color-background-secondary); }
+.faq-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 0.5px solid var(--color-border-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-top: 1px;
+  transition: transform 0.2s;
+}
+.faq-icon.open { transform: rotate(45deg); }
+.faq-a {
+  display: none;
+  padding: 0 16px 14px 46px;
+  font-size: 13.5px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+.faq-a.open { display: block; }
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 99px;
+  margin-bottom: 10px;
+  background: var(--color-background-info);
+  color: var(--color-text-info);
+}
+.tag.green { background: var(--color-background-success); color: var(--color-text-success); }
+.tag.amber { background: var(--color-background-warning); color: var(--color-text-warning); }
+</style>
+
+<div class="faq-wrap">
+
+<div class="section-label">About the technology</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  What is saahECG technology?
+</button>
+<div class="faq-a">
+  <span class="tag">Technology</span><br>
+  saahECG (SAN–Atrial–AVN–His Electrocardiogram) is a groundbreaking non-invasive cardiac diagnostic technology developed by PhysioSign Laboratory, USA. Using a proprietary Adaptive Mixture Technology (AMT), it separates the heart's electrical signal into up to 32 distinct waveforms — each covering only 4.7 Hz of bandwidth — to capture signals from every part of the cardiac conduction system: the Sinoatrial Node, Atrium, AV Node, His Bundle, Bundle Branches, and Purkinje fibres. All of this is achieved in a single 12-second test using the same electrode placement as a standard ECG.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  How does saahECG differ from a conventional ECG?
+</button>
+<div class="faq-a">
+  <span class="tag">Technology</span><br>
+  A conventional 12-lead ECG captures only aggregate surface signals — primarily from the epicardium — missing up to 83% of critical cardiac events. It detects Acute MI (AMI) at only 50% and Acute Coronary Syndrome (ACS) at 0%. saahECG operates at the ionic signal level (10²² ion levels vs. 10⁸ for conventional ECG), scanning 10 myocardial layers from endocardium to epicardium at 12,000 data points per second. It auto-measures 2,700+ parameters per test including PA, AH, and HV intervals — data that previously required invasive intracardiac catheterisation. Detection rates: CAD 93%, AMI 95%, Heart Failure 75% — compared to 17%, 50%, and 0% on conventional ECG.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  What cardiac conditions can saahECG detect?
+</button>
+<div class="faq-a">
+  <span class="tag">Clinical</span><br>
+  saahECG can detect a wide range of conditions that conventional ECG routinely misses:<br><br>
+  • Coronary Artery Disease before MI occurs (93% vs. 17%)<br>
+  • Acute MI / ACS (95% vs. 50%)<br>
+  • Early-stage Heart Failure (75% vs. 0%)<br>
+  • Pre-onset AVNRT / AVRT (arrhythmias, even without active episodes)<br>
+  • Hypertensive heart disease with plaque<br>
+  • Diabetes with diffuse vascular obstruction<br>
+  • COPD cardiac impact (85%)<br>
+  • Stroke risk prediction (75%)<br>
+  • Paroxysmal Atrial Fibrillation (during symptom-free intervals)<br>
+  • Complete / partial AV block localisation (PA, AH, HV intervals)<br>
+  • Non-ST elevation MI with mixed atrial disease
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  What is the ChatEPS-iDx AI engine?
+</button>
+<div class="faq-a">
+  <span class="tag">Technology</span><br>
+  ChatEPS-iDx is saahECG's integrated artificial intelligence analysis system. Unlike traditional database-driven AI, it functions as a real-time, patient-specific intelligent system that automatically identifies, analyses, and reports all 2,700+ parameters per test — generating both qualitative and quantitative diagnostic output. It operates without dependency on cloud databases, working on a 1-on-1 basis for each patient. For every heartbeat, it measures over 25 parameters including Heart Rate, PR interval, PA interval, AH interval, HV interval, QRS duration, QT interval, and flags abnormalities requiring clinical follow-up.
+</div>
+</div>
+
+<div class="section-label">Device & hardware</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  What hardware does saahECG use?
+</button>
+<div class="faq-a">
+  <span class="tag green">Hardware</span><br>
+  saahECG runs on the PhysioSign PHS-U10 Multi-channel Electrocardiograph — a portable, desktop, non-invasive medical device. Key specs:<br><br>
+  • 10.4-inch colour LCD touchscreen (800×600 resolution)<br>
+  • Standard 12-lead ECG configuration<br>
+  • Sampling rate: 1,000–5,000 Hz (SAAH mode)<br>
+  • 28 GB solid-state internal storage (tens of thousands of records)<br>
+  • Connectivity: USB, SD card, Wi-Fi, LAN, 3G<br>
+  • Built-in rechargeable lithium-ion battery (11.1V, 2,200 mAh)<br>
+  • Dimensions: 420 × 300 × 100 mm, ~4 kg<br>
+  • Safety class: CF Type, Class I, Defibrillation Protected<br>
+  • Operates on AC 100–240V, 50/60Hz<br><br>
+  The device simultaneously records both conventional 12-lead ECG and saahECG in every test.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  Does saahECG require special electrodes or consumables?
+</button>
+<div class="faq-a">
+  <span class="tag green">Hardware</span><br>
+  Yes. saahECG uses proprietary patented PhysioSign electrodes with a non-cytotoxic silver/silver chloride substrate, specifically engineered to capture ionic-level micro-signals that standard ECG electrodes cannot detect. These are the only electrodes validated for use with the saahECG system. The cost per test is approximately US$9–10 in electrode consumables — far lower than invasive EP (US$500–8,000 per procedure). Use of non-recommended electrodes may compromise signal quality and diagnostic accuracy.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  Who operates the saahECG device? Does it require special training?
+</button>
+<div class="faq-a">
+  <span class="tag green">Hardware</span><br>
+  The saahECG device is intended for use by trained operators under the supervision of a licensed healthcare practitioner, in a hospital or medical professional's facility. Because electrode placement follows the standard 12-lead ECG configuration — identical to what any ECG technician already knows — no additional procedural training is required for the acquisition step. The ChatEPS-iDx AI handles all 2,700+ parameter measurements automatically, eliminating the need for specialist-level manual ECG reading. Initial device onboarding and training is provided by ECPW.
+</div>
+</div>
+
+<div class="section-label">Certification & validation</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  Is saahECG clinically validated?
+</button>
+<div class="faq-a">
+  <span class="tag amber">Regulatory</span><br>
+  Yes. saahECG has been validated in multiple published studies:<br><br>
+  • <b>Foundational study (2016):</b> 1,500 normal subjects + 110 invasive EP-controlled patients. ANOVA confirmed no statistically significant difference vs. invasive EP (P > 0.05). Published in the International Journal of Cardiology (Vol. 222, pp. 499–503).<br><br>
+  • <b>Pig AMI model (2018):</b> saahECG detected MI 12 seconds faster than conventional ECG. Published in Medical Science Monitor (DOI: 10.12659/MSM.905961).<br><br>
+  • <b>Clinical case (2025):</b> Non-invasive third-degree AV block diagnosis at a doctor's office. Published in the International Journal of Family & Community Medicine.<br><br>
+  • <b>Ongoing India trial:</b> Active study under Dr. C.B. Meena at SMS Hospital, Jaipur.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  What regulatory certifications does saahECG hold?
+</button>
+<div class="faq-a">
+  <span class="tag amber">Regulatory</span><br>
+  The saahECG system carries the following certifications and approvals:<br><br>
+  • <b>CE MDR Certification</b> (EU Regulation 2017/745) — Risk Class IIa, issued by Bureau Veritas Italia S.p.A. (Notified Body #1370). Certificate No. IT347897, valid until December 2030.<br><br>
+  • <b>CDSCO Manufacturing Licence (India)</b> — Licence No. MFG/MD/2025/000262, issued to ECPW under India's Medical Devices Rules, 2017, for the SAAH ECG machine with ChatEPS as a Class B medical device.<br><br>
+  • <b>96 US & International Patents</b> — covering hardware architecture, signal processing, frequency separation, electrode design, adaptive mixture technology, and AI diagnostic algorithms.<br><br>
+  • Compliant with IEC 60601-1 and IEC 60601-1-2 electromagnetic compatibility standards.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  Are there peer-reviewed publications supporting saahECG?
+</button>
+<div class="faq-a">
+  <span class="tag amber">Research</span><br>
+  Yes. Key peer-reviewed publications include:<br><br>
+  1. Chen G et al. <i>Int J Cardiol.</i> 2016;222:499–503 — foundational EPCG validation study.<br>
+  2. Zhao W et al. <i>Med Sci Monit.</i> 2018;24:1303–1309 — AMI detection in pig model.<br>
+  3. Ortigoza DV et al. <i>Int J Fam Commun Med.</i> 2025;9(6):154–156 — AV block at doctor's office.<br>
+  4. Chang Q et al. <i>Anatol J Cardiol.</i> 2017;18:110–114 — His bundle beat-by-beat detection.<br>
+  5. Liu R et al. <i>Med Hypotheses.</i> 2015;85(4):475–479 — novel microwave signal recording.<br><br>
+  For full publication list, visit our Research Publications page.
+</div>
+</div>
+
+<div class="section-label">Clinical use & integration</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  How does a saahECG test work, step by step?
+</button>
+<div class="faq-a">
+  <span class="tag">Clinical</span><br>
+  The saahECG test is simple, painless, and non-invasive:<br><br>
+  1. Patient arrives — no additional preparation beyond a standard ECG visit<br>
+  2. Electrodes are placed in the standard 12-lead configuration (same as conventional ECG)<br>
+  3. A 12-second automated test is performed — no X-ray, no catheter, no sedation<br>
+  4. The ChatEPS-iDx AI automatically measures 2,700+ parameters across every heartbeat<br>
+  5. A complete qualitative and quantitative diagnostic report is generated immediately<br>
+  6. Reports include the full saahECG trace, conventional 12-lead ECG, bsBHE (non-invasive Bundle of His electrogram), and a parameter data table<br><br>
+  Results can be printed, exported as PDF to USB, or stored internally for pre/post-surgery comparison.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  Can saahECG be used before and after cardiac surgery?
+</button>
+<div class="faq-a">
+  <span class="tag">Clinical</span><br>
+  Yes — this is one of saahECG's key clinical advantages over invasive electrophysiology. Invasive EP can only be performed during surgery; saahECG can be performed before surgery (baseline assessment, conduction system mapping, pre-RFA or pre-pacemaker evaluation), immediately after surgery (conduction restoration verification), and at any follow-up visit (stent restenosis, post-PCI prognosis, pacemaker function). The device can be used in any clinic or hospital room — no catheterisation lab or operating theatre is needed.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  Can saahECG be used with patients who have pacemakers or defibrillators?
+</button>
+<div class="faq-a">
+  <span class="tag">Clinical</span><br>
+  Yes. The PHS-U10 device is designed for use with patients who have implanted pacemakers or defibrillators. The device carries CF Type defibrillation protection and recovers normal function within 5 seconds after exposure to a defibrillation voltage. Always ensure that defibrillation electrodes do not contact saahECG electrodes during simultaneous use.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  How is patient data stored and reported?
+</button>
+<div class="faq-a">
+  <span class="tag">Clinical</span><br>
+  The PHS-U10 has a 28 GB solid-state drive that can store tens of thousands of patient records. Each record includes patient information (name, ID, age, gender, height, weight), test date and time, all diagnostic parameter tables, saahECG waveform traces, conventional ECG traces, and AI-generated diagnostic suggestions. Reports can be exported as PDF files to USB drive or SD card, printed directly from the device, or accessed via Wi-Fi/LAN network connection. Patient records can be deleted, edited, or retrieved at any time through the device's touchscreen interface.
+</div>
+</div>
+
+<div class="section-label">Pricing & access</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  How does saahECG compare in cost to invasive electrophysiology?
+</button>
+<div class="faq-a">
+  <span class="tag green">Pricing</span><br>
+  saahECG offers a substantial economic advantage:<br><br>
+  • Device cost: ~US$50,000–55,000 vs. US$280,000–400,000 for an invasive EP system<br>
+  • Consumable cost per test: ~US$9–10 vs. US$500–8,000 for invasive EP<br>
+  • No catheterisation lab infrastructure required<br>
+  • A single device can perform 40–80+ tests per day (12 seconds each) vs. 2–4 invasive EP procedures per day<br>
+  • No physician radiation exposure<br>
+  • Minimal specialist training requirement<br><br>
+  Contact ECPW for detailed pricing and procurement information for your institution.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  How can our hospital get started with saahECG?
+</button>
+<div class="faq-a">
+  <span class="tag green">Pricing</span><br>
+  To procure or evaluate saahECG for your hospital or clinic, contact ECPW — the authorised Indian manufacturer and distributor of PhysioSign's saahECG technology:<br><br>
+  <b>ECPW — Eastern Chemical & Pharmaceutical Works</b><br>
+  12, Rajsarovar, Pal Road, Jodhpur, Rajasthan — 342001<br>
+  Phone: 9828013726<br><br>
+  ECPW holds the CDSCO manufacturing licence (MFG/MD/2025/000262) for India. Our team will guide you through device demonstration, staff orientation, and clinical onboarding.
+</div>
+</div>
+
+<div class="section-label">Safety & maintenance</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  What are the device maintenance requirements?
+</button>
+<div class="faq-a">
+  <span class="tag">Safety</span><br>
+  The PHS-U10 requires routine maintenance to ensure performance and patient safety:<br><br>
+  • Scheduled maintenance at least every 6 months, with annual recalibration as required by regulatory standards<br>
+  • Clean the LCD screen with a damp cloth and mild solution; clean patient cables with 75% alcohol<br>
+  • Do not immerse device, cables, or battery in liquid<br>
+  • Inspect patient cables regularly; replace if damaged or aged<br>
+  • Battery should be replaced if operating time falls below 30 minutes<br>
+  • Fuse model: T2AH, 250V — replace only with same specification<br>
+  • All maintenance and repair must be performed by qualified personnel; do not open the device case without disconnecting from power.
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-q" onclick="toggle(this)">
+  <span class="faq-icon">+</span>
+  What is the device warranty?
+</button>
+<div class="faq-a">
+  <span class="tag">Safety</span><br>
+  The PhysioSign PHS-U10 is warranted by PhysioSign Hong Kong Medical Limited against defects in materials and manufacture for one year from date of purchase. The warranty covers free replacement of defective parts. Consumable items (electrodes, battery) are excluded from warranty coverage. The warranty does not apply to damage resulting from unauthorised modification, improper handling, water or fire damage, or removal of original identification marks. For warranty claims, contact ECPW or the authorised dealer directly.
+</div>
+</div>
+
+</div>
+
+<script>
+function toggle(btn) {
+  const icon = btn.querySelector('.faq-icon');
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-a.open').forEach(a => {
+    a.classList.remove('open');
+    a.previousElementSibling.querySelector('.faq-icon').classList.remove('open');
+    a.previousElementSibling.querySelector('.faq-icon').textContent = '+';
+  });
+  if (!isOpen) {
+    answer.classList.add('open');
+    icon.classList.add('open');
+    icon.textContent = '+';
+  }
+}
+</script>

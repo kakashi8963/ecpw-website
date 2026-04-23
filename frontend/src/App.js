@@ -12,6 +12,8 @@ import ComparisonTable from "@/components/ComparisonTable";
 import PublicationsSection from "@/components/PublicationsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import ProductCatalog from "@/components/ProductCatalog";
+import FAQSection from "@/components/FAQSection";
 import { Analytics } from "@vercel/analytics/react";
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
       ? window.location.pathname.replace(/\/+$/, "") || "/"
       : "/";
   const isPublicationsPage = normalizedPath === "/publications";
+  const isProductsPage = normalizedPath === "/products";
+  const isFAQsPage = normalizedPath === "/faqs";
 
   if (isPublicationsPage) {
     return (
@@ -27,6 +31,32 @@ function App() {
         <Navbar />
         <main>
           <PublicationsSection />
+        </main>
+        <Footer />
+        <Analytics />
+      </div>
+    );
+  }
+
+  if (isProductsPage) {
+    return (
+      <div className="min-h-screen bg-[#050505] text-white" data-testid="app-root">
+        <Navbar />
+        <main>
+          <ProductCatalog />
+        </main>
+        <Footer />
+        <Analytics />
+      </div>
+    );
+  }
+
+  if (isFAQsPage) {
+    return (
+      <div className="min-h-screen bg-[#050505] text-white" data-testid="app-root">
+        <Navbar />
+        <main>
+          <FAQSection />
         </main>
         <Footer />
         <Analytics />
