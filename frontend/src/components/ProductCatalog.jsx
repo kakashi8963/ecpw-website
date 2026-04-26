@@ -113,7 +113,7 @@ const ProductCard = ({ product, index }) => {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="relative w-48 h-48 lg:w-56 lg:h-56 object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                  className="relative w-64 h-64 lg:w-80 lg:h-80 object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
                   data-testid={`product-image-${product.id}`}
                 />
               </div>
