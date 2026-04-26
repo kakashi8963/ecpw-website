@@ -105,15 +105,15 @@ const ProductCard = ({ product, index }) => {
           {/* Image section */}
           <div className="relative lg:w-2/5 flex-shrink-0">
             <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-50`} />
-            <div className="relative p-6 lg:p-8 flex items-center justify-center min-h-[260px] lg:min-h-[360px]">
-              <div className="relative">
+            <div className="relative p-6 lg:p-8 flex items-center justify-center min-h-[300px] lg:min-h-[400px]">
+              <div className="relative w-full h-full flex items-center justify-center">
                 <div
                   className={`absolute -inset-6 rounded-full bg-gradient-to-br ${product.gradient} blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
                 />
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="relative w-64 h-64 lg:w-80 lg:h-80 object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                  className="relative w-full h-full max-h-[260px] lg:max-h-[380px] object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
                   data-testid={`product-image-${product.id}`}
                 />
               </div>
