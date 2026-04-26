@@ -85,7 +85,7 @@ const faqCategories = [
       {
         q: 'Does saahECG require special electrodes or consumables?',
         tag: 'Hardware',
-        a: 'Yes. saahECG uses proprietary patented PhysioSign electrodes with a non-cytotoxic silver/silver chloride substrate, specifically engineered to capture ionic-level micro-signals that standard ECG electrodes cannot detect. These are the only electrodes validated for use with the saahECG system. The cost per test is approximately US$9–10 in electrode consumables — far lower than invasive EP (US$500–8,000 per procedure). Use of non-recommended electrodes may compromise signal quality and diagnostic accuracy.',
+        a: 'Yes. saahECG uses proprietary patented PhysioSign electrodes with a non-cytotoxic silver/silver chloride substrate, specifically engineered to capture ionic-level micro-signals that standard ECG electrodes cannot detect. These are the only electrodes validated for use with the saahECG system. The cost per test is approximately US$30-50 in electrode consumables — far lower than invasive EP (US$500-8000 per procedure). Use of non-recommended electrodes may compromise signal quality and diagnostic accuracy.',
       },
       {
         q: 'Who operates the saahECG device? Does it require special training?',
@@ -194,8 +194,8 @@ const faqCategories = [
         a: null,
         listIntro: 'saahECG offers a substantial economic advantage:',
         list: [
-          'Device cost: ~US$50,000–55,000 vs. US$280,000–400,000 for an invasive EP system',
-          'Consumable cost per test: ~US$9–10 vs. US$500–8,000 for invasive EP',
+          'Device cost: US$130,000 - 140,000 vs. US$280,000 - 400,000 for an invasive EP system',
+          'Consumable cost per test: US$30-50 vs. US$500-8000 for invasive EP',
           'No catheterisation lab infrastructure required',
           'A single device can perform 40–80+ tests per day (12 seconds each) vs. 2–4 invasive EP procedures per day',
           'No physician radiation exposure',
@@ -236,7 +236,7 @@ const faqCategories = [
       {
         q: 'What is the device warranty?',
         tag: 'Safety',
-        a: "The PhysioSign PHS-U10 is warranted by PhysioSign Hong Kong Medical Limited against defects in materials and manufacture for one year from date of purchase. The warranty covers free replacement of defective parts. Consumable items (electrodes, battery) are excluded from warranty coverage. The warranty does not apply to damage resulting from unauthorised modification, improper handling, water or fire damage, or removal of original identification marks. For warranty claims, contact ECPW or the authorised dealer directly.",
+        a: "The PhysioSign PHS-U10 is warranted by ECPW against manufacturing and internal component defects for a period of one year from the date of purchase. This warranty is limited to defects arising under normal use and covers repair or replacement of defective internal parts. ECPW is not responsible for any damage resulting from improper handling, unauthorised modifications, misuse, or external factors such as water or fire. Consumable items, including electrodes and batteries, are not covered under this warranty. For any warranty claims, please contact ECPW or an authorised dealer.",
       },
     ],
   },
@@ -335,7 +335,7 @@ const FAQItem = ({ item, isOpen, onToggle, itemIndex }) => (
                     key={i}
                     className="text-[13.5px] text-slate-400 leading-[1.75] flex items-start gap-2"
                   >
-                    <span className="text-cyan-500/60 mt-[9px] flex-shrink-0">
+                    <span className="text-cyan-500/60 mt-[2px] flex-shrink-0">
                       {item.ordered ? '' : '•'}
                     </span>
                     <span>
