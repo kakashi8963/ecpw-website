@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import './blog2.css';
 
 const Blog2CardiacCrisis = () => {
@@ -10,12 +9,12 @@ const Blog2CardiacCrisis = () => {
   return (
     <div className="blog2-container">
       <header>
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <a href="/" style={{ textDecoration: 'none' }}>
           <div className="logo">saah<span>ECG</span></div>
-        </Link>
-        <Link to="/blogs" style={{ textDecoration: 'none' }}>
+        </a>
+        <a href="/blogs" style={{ textDecoration: 'none' }}>
           <div className="header-tag">All Blogs</div>
-        </Link>
+        </a>
       </header>
 
       <section className="hero">
@@ -120,7 +119,7 @@ const Blog2CardiacCrisis = () => {
         <div className="cta-strip">
           <h3>Bring saahECG to Your Practice</h3>
           <p>CE MDR certified. CDSCO licensed. Validated at SMS Hospital, Jaipur. Deployable in any clinical setting — no special infrastructure required.</p>
-          <Link to="/" className="btn">Request Information</Link>
+          <a href="/" className="btn">Request Information</a>
         </div>
 
         <div className="tags">

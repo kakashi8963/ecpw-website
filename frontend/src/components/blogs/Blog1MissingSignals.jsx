@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import './blog1.css';
 
 const Blog1MissingSignals = () => {
@@ -10,12 +9,12 @@ const Blog1MissingSignals = () => {
   return (
     <div className="blog1-container">
       <header className="masthead">
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <a href="/" style={{ textDecoration: 'none' }}>
           <div className="brand">saah<span>ECG</span> <span style={{color: 'rgba(255,255,255,.35)', fontSize: '.9rem', fontFamily: "'Source Serif 4',serif", fontWeight: 300}}> · Insights</span></div>
-        </Link>
-        <Link to="/blogs" style={{ textDecoration: 'none' }}>
+        </a>
+        <a href="/blogs" style={{ textDecoration: 'none' }}>
           <div className="nav-pill">All Blogs</div>
-        </Link>
+        </a>
       </header>
 
       <section className="hero">
@@ -127,7 +126,7 @@ const Blog1MissingSignals = () => {
         <div className="article-cta">
           <h3>Learn More About saahECG</h3>
           <p>saahECG is currently undergoing clinical validation at SMS Hospital, Jaipur. CE MDR certified. 96 US patents. The same test — a new level of clarity.</p>
-          <Link to="/" className="cta-btn">Request a Demonstration</Link>
+          <a href="/" className="cta-btn">Request a Demonstration</a>
         </div>
 
         <div className="tag-row">

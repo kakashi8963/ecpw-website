@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import './blog3.css';
 
 const Blog3CostComparison = () => {
@@ -10,12 +9,12 @@ const Blog3CostComparison = () => {
   return (
     <div className="blog3-container">
       <div className="topbar">
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <a href="/" style={{ textDecoration: 'none' }}>
           <div className="brand">saah<em>ECG</em></div>
-        </Link>
-        <Link to="/blogs" style={{ textDecoration: 'none' }}>
+        </a>
+        <a href="/blogs" style={{ textDecoration: 'none' }}>
           <div className="topbar-right">All Blogs</div>
-        </Link>
+        </a>
       </div>
 
       <section className="hero">
@@ -176,7 +175,7 @@ const Blog3CostComparison = () => {
             <h2>Ready to Deploy saahECG?</h2>
             <p>CE MDR certified. CDSCO licensed. Currently in clinical validation at SMS Hospital, Jaipur. Available for deployment in hospitals, clinics, and health programmes across India.</p>
           </div>
-          <Link to="/" className="cta-btn">Contact Us</Link>
+          <a href="/" className="cta-btn">Contact Us</a>
         </div>
 
         <div className="tags">
