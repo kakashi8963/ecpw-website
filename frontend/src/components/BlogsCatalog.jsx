@@ -5,7 +5,11 @@ import { ArrowRight, BookOpen, Clock } from 'lucide-react';
 const blogsData = [
   {
     id: 'missing-signals',
-    title: 'Your ECG Is 120 Years Old. And It May Be Missing What Matters Most.',
+    titleNode: (
+      <span style={{ fontFamily: "'Playfair Display', serif", color: 'white', fontWeight: 700, letterSpacing: 'normal', textTransform: 'none' }}>
+        Your ECG Is <em style={{ color: '#C0392B', fontStyle: 'italic' }}>120 Years Old.</em><br/>And It May Be Missing What Matters Most.
+      </span>
+    ),
     summary: 'The world\'s most trusted cardiac test has a blind spot at the very centre of the heart. Here\'s what it cannot see — and what now can.',
     readTime: '8 min read',
     category: 'Cardiac Diagnostics',
@@ -13,7 +17,11 @@ const blogsData = [
   },
   {
     id: 'cardiac-crisis',
-    title: 'India\'s Silent Cardiac Crisis',
+    titleNode: (
+      <span style={{ fontFamily: "'Bebas Neue', sans-serif", color: '#F0F4F8', fontWeight: 400, letterSpacing: '0.02em', textTransform: 'uppercase' }}>
+        India's <span style={{ color: '#E03E2D' }}>Silent</span> Cardiac <span style={{ color: '#D4A843' }}>Crisis</span>
+      </span>
+    ),
     summary: 'We are the world\'s heart attack capital — and most of us never get a warning. Why India\'s cardiac care gap is costing millions of lives, and what can change.',
     readTime: '10 min read',
     category: 'Public Health',
@@ -21,7 +29,11 @@ const blogsData = [
   },
   {
     id: '12sec-vs-5lakh',
-    title: 'The 12-Second Test That Could Replace a ₹5 Lakh Procedure',
+    titleNode: (
+      <span style={{ fontFamily: "'DM Serif Display', serif", color: 'white', fontWeight: 400, letterSpacing: 'normal', textTransform: 'none' }}>
+        The <span style={{ color: '#FF8A80', fontStyle: 'italic' }}>12-Second Test</span> That Could Replace a ₹5 Lakh Procedure
+      </span>
+    ),
     summary: 'For decades, detailed cardiac electrophysiology meant an invasive catheterisation. A long wait. A hospital admission. A bill most Indians cannot pay. That equation has changed.',
     readTime: '9 min read',
     category: 'Technology & Access',
@@ -94,8 +106,8 @@ const BlogsCatalog = () => {
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold font-heading leading-tight mb-4 group-hover:text-cyan-400 transition-colors duration-300 relative z-10">
-                  {blog.title}
+                <h3 className="text-2xl leading-tight mb-4 group-hover:opacity-80 transition-opacity duration-300 relative z-10">
+                  {blog.titleNode}
                 </h3>
 
                 <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow relative z-10">
