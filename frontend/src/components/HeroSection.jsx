@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section
       id="hero"
       data-testid="hero-section"
-      className="relative h-screen flex items-center overflow-hidden bg-[#020b18]"
+      className="relative min-h-screen flex items-center overflow-hidden bg-[#020b18]"
       style={{
         backgroundImage: 'url(/product_image.png)',
         backgroundSize: 'contain',
@@ -32,7 +32,7 @@ const HeroSection = () => {
       </svg>
 
       {/* Text — left half only */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 sm:pt-32 lg:pt-28">
         <div className="max-w-xl">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
