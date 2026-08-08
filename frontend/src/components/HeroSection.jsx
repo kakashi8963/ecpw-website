@@ -9,7 +9,7 @@ const HeroSection = () => {
       data-testid="hero-section"
       className="relative h-screen flex items-center overflow-hidden"
       style={{
-        backgroundImage: 'url(/hero-bg.png)',
+        backgroundImage: 'url(/product_image.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',

@@ -42,7 +42,7 @@ const SolutionSection = () => {
             <div className="relative glass rounded-2xl p-4 h-full flex items-center justify-center">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent" />
               <img
-                src="/hero-bg.png"
+                src="/full_image.png"
                 alt="saahECG Device"
                 className="relative w-full mx-auto rounded-xl object-contain"
                 data-testid="solution-device-image"
