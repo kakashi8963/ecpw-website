@@ -4,7 +4,7 @@ import { ChevronRight, Activity } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section id="hero" data-testid="hero-section" className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="hero" data-testid="hero-section" className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Background layers */}
       <div className="absolute inset-0 bg-[#020b18]" />
       <div className="absolute inset-0 grid-pattern opacity-30" />
@@ -25,8 +25,8 @@ const HeroSection = () => {
         />
       </svg>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative z-10 flex-1 flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-8 w-full">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
           {/* Left: Text Content */}
           <div>
             <motion.h1
@@ -116,14 +116,14 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.5 }}
-            className="relative hidden lg:flex items-center justify-center"
+            className="relative hidden lg:flex items-center justify-center h-full"
           >
             {/* Outer glow */}
             <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-cyan-500/15 via-transparent to-blue-700/10 blur-2xl" />
             <img
               src="/hero-bg.png"
               alt="saahECG Cardiac Diagnostics"
-              className="relative w-full max-w-lg rounded-2xl object-contain drop-shadow-2xl"
+              className="relative w-full rounded-2xl object-contain drop-shadow-2xl"
               data-testid="hero-device-image"
             />
           </motion.div>
