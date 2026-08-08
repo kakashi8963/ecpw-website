@@ -5,20 +5,14 @@ import { ChevronRight, Activity } from 'lucide-react';
 const HeroSection = () => {
   return (
     <section id="hero" data-testid="hero-section" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Full-screen hero background image */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: 'url(/hero-bg.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
-      {/* Dark overlay for text legibility on the left */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#020b18]/90 via-[#020b18]/60 to-transparent" />
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] to-transparent" />
+      {/* Background layers */}
+      <div className="absolute inset-0 bg-[#020b18]" />
+      <div className="absolute inset-0 grid-pattern opacity-30" />
+      <div className="absolute inset-0 noise-overlay" />
+
+      {/* Radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-cyan-500/5 blur-[120px]" />
+      <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-violet-500/5 blur-[100px]" />
 
       {/* ECG Line SVG */}
       <svg className="absolute bottom-24 left-0 w-full h-24 opacity-10" viewBox="0 0 1440 100" preserveAspectRatio="none">
@@ -44,7 +38,7 @@ const HeroSection = () => {
             >
               Advancing
               <br />
-              Cardiology Through
+              Healthcare Through
               <br />
               <span className="text-cyan-400 glow-text">Science & Precision</span>
             </motion.h1>
@@ -117,8 +111,22 @@ const HeroSection = () => {
             </motion.div>
           </div>
 
-          {/* Right: spacer so the background image shows through */}
-          <div className="hidden lg:block" />
+          {/* Right: Visual */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, delay: 0.5 }}
+            className="relative hidden lg:flex items-center justify-center"
+          >
+            {/* Outer glow */}
+            <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-cyan-500/15 via-transparent to-blue-700/10 blur-2xl" />
+            <img
+              src="/hero-bg.png"
+              alt="saahECG Cardiac Diagnostics"
+              className="relative w-full max-w-lg rounded-2xl object-contain drop-shadow-2xl"
+              data-testid="hero-device-image"
+            />
+          </motion.div>
         </div>
       </div>
     </section>
