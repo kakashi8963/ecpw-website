@@ -7,16 +7,16 @@ const HeroSection = () => {
     <section
       id="hero"
       data-testid="hero-section"
-      className="relative h-screen flex items-center overflow-hidden"
+      className="relative h-screen flex items-center overflow-hidden bg-[#020b18]"
       style={{
         backgroundImage: 'url(/product_image.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center center',
+        backgroundSize: 'contain',
+        backgroundPosition: 'right center',
         backgroundRepeat: 'no-repeat',
       }}
     >
       {/* Left-side gradient so text stays readable */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#020b18]/95 via-[#020b18]/70 to-[#020b18]/10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#020b18] via-[#020b18]/85 to-transparent" />
       {/* Bottom fade into the next section */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#050505] to-transparent" />
 
