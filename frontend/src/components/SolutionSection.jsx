@@ -39,12 +39,12 @@ const SolutionSection = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-2"
           >
-            <div className="relative glass rounded-2xl p-6 h-full flex items-center justify-center">
+            <div className="relative glass rounded-2xl p-4 h-full flex items-center justify-center">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent" />
               <img
-                src="https://customer-assets.emergentagent.com/job_cranky-haibt-2/artifacts/4deo1vm3_WhatsApp%20Image%202026-02-09%20at%201.45.15%20PM.jpeg"
+                src="/hero-bg.png"
                 alt="saahECG Device"
-                className="relative w-full max-w-sm mx-auto"
+                className="relative w-full mx-auto rounded-xl object-contain"
                 data-testid="solution-device-image"
               />
             </div>
