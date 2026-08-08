@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Logo */}
           <div className="flex items-center gap-2.5">
-            <img src="/logo.png" alt="ECPW Logo" className="h-9 w-9 rounded-lg object-contain" />
+            <img src="/logo.png" alt="ECPW Logo" className="h-9 w-9 object-contain" />
             <div>
               <span className="font-heading font-bold text-sm text-white tracking-tight">
                 ECPW

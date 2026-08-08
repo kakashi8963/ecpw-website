@@ -5,15 +5,21 @@ import { ChevronRight, Activity } from 'lucide-react';
 const HeroSection = () => {
   return (
     <section id="hero" data-testid="hero-section" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background layers */}
-      <div className="absolute inset-0 bg-[#050505]" />
-      <div className="absolute inset-0 grid-pattern" />
-      <div className="absolute inset-0 noise-overlay" />
-      
-      {/* Radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-cyan-500/5 blur-[120px]" />
-      <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-violet-500/5 blur-[100px]" />
-      
+      {/* Full-screen hero background image */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'url(/hero-bg.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      {/* Dark overlay for text legibility on the left */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#020b18]/90 via-[#020b18]/60 to-transparent" />
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] to-transparent" />
+
       {/* ECG Line SVG */}
       <svg className="absolute bottom-24 left-0 w-full h-24 opacity-10" viewBox="0 0 1440 100" preserveAspectRatio="none">
         <path
@@ -111,34 +117,8 @@ const HeroSection = () => {
             </motion.div>
           </div>
 
-          {/* Right: Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="relative hidden lg:block"
-          >
-            <div className="relative">
-              {/* Glow ring */}
-              <div className="absolute -inset-4 rounded-2xl bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-500/10 blur-xl" />
-              
-              {/* Device image */}
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0f1c]">
-                <img
-                  src="https://customer-assets.emergentagent.com/job_cranky-haibt-2/artifacts/4deo1vm3_WhatsApp%20Image%202026-02-09%20at%201.45.15%20PM.jpeg"
-                  alt="saahECG Device by PhysioSign"
-                  className="w-full h-auto object-cover animate-float"
-                  data-testid="hero-device-image"
-                />
-                
-                {/* Overlay badge */}
-                <div className="absolute bottom-4 left-4 glass rounded-lg px-3 py-2 flex items-center gap-2">
-                  <Activity className="w-4 h-4 text-cyan-400" />
-                  <span className="text-xs text-white font-medium">saahECG Technology</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          {/* Right: spacer so the background image shows through */}
+          <div className="hidden lg:block" />
         </div>
       </div>
     </section>

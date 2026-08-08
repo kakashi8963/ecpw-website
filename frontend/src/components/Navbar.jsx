@@ -64,7 +64,7 @@ const Navbar = () => {
             className="flex items-center gap-2.5 group"
             data-testid="nav-logo"
           >
-            <img src="/logo.png" alt="ECPW Logo" className="h-9 w-9 rounded-lg object-contain" />
+            <img src="/logo.png" alt="ECPW Logo" className="h-9 w-9 object-contain" />
             <span className="font-heading font-bold text-sm lg:text-base text-white tracking-tight">
               ECPW
             </span>
