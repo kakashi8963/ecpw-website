@@ -1,18 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight, Activity } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section id="hero" data-testid="hero-section" className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Background layers */}
-      <div className="absolute inset-0 bg-[#020b18]" />
-      <div className="absolute inset-0 grid-pattern opacity-30" />
-      <div className="absolute inset-0 noise-overlay" />
-
-      {/* Radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-cyan-500/5 blur-[120px]" />
-      <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-violet-500/5 blur-[100px]" />
+    <section
+      id="hero"
+      data-testid="hero-section"
+      className="relative h-screen flex items-center overflow-hidden"
+      style={{
+        backgroundImage: 'url(/hero-bg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      {/* Left-side gradient so text stays readable */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#020b18]/95 via-[#020b18]/70 to-[#020b18]/10" />
+      {/* Bottom fade into the next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#050505] to-transparent" />
 
       {/* ECG Line SVG */}
       <svg className="absolute bottom-24 left-0 w-full h-24 opacity-10" viewBox="0 0 1440 100" preserveAspectRatio="none">
@@ -25,107 +31,88 @@ const HeroSection = () => {
         />
       </svg>
 
-      <div className="relative z-10 flex-1 flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
-          {/* Left: Text Content */}
-          <div>
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight"
-              data-testid="hero-heading"
-            >
-              Advancing
-              <br />
-              Healthcare Through
-              <br />
-              <span className="text-cyan-400 glow-text">Science & Precision</span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-6 text-slate-400 text-base lg:text-lg leading-relaxed max-w-lg"
-              data-testid="hero-subtext"
-            >
-              Empowering cardiologists with the next generation of cardiac diagnostics. 
-              <span className="text-white font-medium"> saahECG </span>
-              technology &mdash; the world's first AI-powered ECG capturing signals at the 
-              <span className="font-mono text-cyan-400"> 10<sup>22</sup> </span> ion level.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="mt-8 flex flex-col sm:flex-row gap-4"
-            >
-              <a
-                href="#technology"
-                data-testid="hero-cta-discover"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('#technology')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-cyan-500 text-white font-semibold text-sm hover:bg-cyan-400 transition-all duration-300 glow-cyan"
-              >
-                Discover saahECG
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="#contact"
-                data-testid="hero-cta-contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/15 text-slate-300 font-medium text-sm hover:border-cyan-500/40 hover:text-white transition-all duration-300"
-              >
-                Contact Us
-              </a>
-            </motion.div>
-
-            {/* Stats row */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="mt-12 flex flex-wrap gap-8"
-            >
-              {[
-                { value: '12,000', label: 'Samples/sec', sub: 'vs 1,000 traditional' },
-                { value: '2,700', label: 'Data Points', sub: 'per heartbeat' },
-                { value: '12s', label: 'Test Time', sub: 'rapid diagnosis' },
-                { value: '96', label: 'Patents', sub: 'protected IP' },
-              ].map((stat, i) => (
-                <div key={i} className="group" data-testid={`hero-stat-${i}`}>
-                  <div className="font-mono text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs text-slate-400 font-medium mt-0.5">{stat.label}</div>
-                  <div className="text-[10px] text-slate-600 mt-0.5">{stat.sub}</div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Right: Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.5 }}
-            className="relative hidden lg:flex items-center justify-center h-full"
+      {/* Text — left half only */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-xl">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="font-heading text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight"
+            data-testid="hero-heading"
           >
-            {/* Outer glow */}
-            <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-cyan-500/15 via-transparent to-blue-700/10 blur-2xl" />
-            <img
-              src="/hero-bg.png"
-              alt="saahECG Cardiac Diagnostics"
-              className="relative w-full rounded-2xl object-contain drop-shadow-2xl"
-              data-testid="hero-device-image"
-            />
+            Advancing
+            <br />
+            Healthcare Through
+            <br />
+            <span className="text-cyan-400 glow-text">Science & Precision</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-6 text-slate-300 text-base lg:text-lg leading-relaxed"
+            data-testid="hero-subtext"
+          >
+            Empowering cardiologists with the next generation of cardiac diagnostics.
+            <span className="text-white font-medium"> saahECG </span>
+            technology &mdash; the world's first AI-powered ECG capturing signals at the
+            <span className="font-mono text-cyan-400"> 10<sup>22</sup> </span> ion level.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mt-8 flex flex-col sm:flex-row gap-4"
+          >
+            <a
+              href="#technology"
+              data-testid="hero-cta-discover"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#technology')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-cyan-500 text-white font-semibold text-sm hover:bg-cyan-400 transition-all duration-300 glow-cyan"
+            >
+              Discover saahECG
+              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="#contact"
+              data-testid="hero-cta-contact"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-white/20 text-slate-300 font-medium text-sm hover:border-cyan-500/40 hover:text-white transition-all duration-300"
+            >
+              Contact Us
+            </a>
+          </motion.div>
+
+          {/* Stats row */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="mt-12 flex flex-wrap gap-8"
+          >
+            {[
+              { value: '12,000', label: 'Samples/sec', sub: 'vs 1,000 traditional' },
+              { value: '2,700', label: 'Data Points', sub: 'per heartbeat' },
+              { value: '12s', label: 'Test Time', sub: 'rapid diagnosis' },
+              { value: '96', label: 'Patents', sub: 'protected IP' },
+            ].map((stat, i) => (
+              <div key={i} className="group" data-testid={`hero-stat-${i}`}>
+                <div className="font-mono text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                  {stat.value}
+                </div>
+                <div className="text-xs text-slate-400 font-medium mt-0.5">{stat.label}</div>
+                <div className="text-[10px] text-slate-500 mt-0.5">{stat.sub}</div>
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>
