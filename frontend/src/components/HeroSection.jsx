@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section
       id="hero"
       data-testid="hero-section"
-      className="relative min-h-screen flex items-center overflow-hidden bg-[#020b18]"
+      className="relative min-h-screen flex items-center bg-[#020b18]"
       style={{
         backgroundImage: 'url(/product_image.png)',
         backgroundSize: 'contain',
@@ -97,7 +97,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="mt-12 flex flex-wrap gap-8"
+            className="mt-10 flex flex-wrap gap-6 sm:gap-8"
           >
             {[
               { value: '12,000', label: 'Samples/sec', sub: 'vs 1,000 traditional' },
